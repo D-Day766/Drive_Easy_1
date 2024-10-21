@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DriveEasy Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-size: 16px; /* Default font size */
+        }
+
+        .personalization {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Logo and Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="DriveEasy Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Available Cars</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#booking">Book a Car</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to DriveEasy Car Rental</h1>
+        <p>At DriveEasy, we offer a wide range of vehicles to meet your needs. Whether you are looking for an economy car for a weekend getaway or a luxury sedan for a business trip, we’ve got you covered.</p>
+        <p>Renting a car has never been easier. Enjoy competitive pricing, flexible booking, and excellent customer service.</p>
+        <button id="viewCarsBtn">View Available Cars</button>
+    </section>
+
+    <!-- Personalization Section -->
+    <section class="personalization">
+        <h2>Personalize Your Experience</h2>
+        <label for="textSize">Text Size:</label>
+        <select id="textSize">
+            <option value="16">Normal</option>
+            <option value="20">Large</option>
+            <option value="24">Extra Large</option>
+        </select>
+
+        <label for="themeColor">Theme Color:</label>
+        <select id="themeColor">
+            <option value="default">Default</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="lightgreen">Light Green</option>
+        </select>
+    </section>
+
+    <!-- Available Cars Section -->
+    <section id="cars">
+        <h2>Our Fleet</h2>
+        <div class="car-gallery">
+            <div class="car" data-type="volkswagen" data-price="40">
+                <img src="images/Volks.jpg" alt="Volkswagen">
+                <h3>Volkswagen</h3>
+                <p>Price: $40/day</p>
+                <button class="bookBtn">Book Now</button>
+            </div>
+            <div class="car" data-type="toyota" data-price="35">
+                <img src="images/toyoa.jpg" alt="Toyota">
+                <h3>Toyota</h3>
+                <p>Price: $35/day</p>
+                <button class="bookBtn">Book Now</button>
+            </div>
+            <div class="car" data-type="sedan" data-price="30">
+                <img src="images/sedan.jpg" alt="Sedan">
+                <h3>Sedan</h3>
+                <p>Price: $30/day</p>
+                <button class="bookBtn">Book Now</button>
+            </div>
+            <div class="car" data-type="suv" data-price="50">
+                <img src="images/SUV.PNG" alt="SUV">
+                <h3>SUV</h3>
+                <p>Price: $50/day</p>
+                <button class="bookBtn">Book Now</button>
+            </div>
+            <div class="car" data-type="convertible" data-price="60">
+                <img src="images/conv.PNG" alt="Convertible">
+                <h3>Convertible</h3>
+                <p>Price: $60/day</p>
+                <button class="bookBtn">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Filtering Section -->
+    <section id="filter">
+        <h2>Filter Cars</h2>
+        <label for="carType">Car Type:</label>
+        <select id="carType">
+            <option value="all">All</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="toyota">Toyota</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="convertible">Convertible</option>
+        </select>
+
+        <label for="priceRange">Max Price per Day:</label>
+        <input type="range" id="priceRange" min="30" max="60" value="60">
+        <span id="priceLabel">$60</span>
+    </section>
+
+    <button id="resetFilters">Reset Filters</button>
+
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Watch Our Introduction</h2>
+        <video controls>
+            <source src="videos/invideo-ai-480 Affordable Car Rentals at Your Fingertip 2024-10-21.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="hidden">
+        <h2>Book Your Car</h2>
+        <form id="bookingForm">
+            <label for="carSelect">Choose a car:</label>
+            <select id="carSelect">
+                <option value="volkswagen">Volkswagen</option>
+                <option value="toyota">Toyota</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="convertible">Convertible</option>
+            </select>
+            <label for="rentalDays">Rental Days:</label>
+            <input type="number" id="rentalDays" name="rentalDays" min="1" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+        <p id="bookingResult"></p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to DriveEasy Car Rental, a trusted name in the car rental industry.</p>
+        <p>We have been serving customers for over 10 years, providing a wide range of vehicles for various needs.</p>
+        <ul>
+            <li>Wide variety of vehicles.</li>
+            <li>Flexible rental periods.</li>
+            <li>No hidden fees.</li>
+            <li>24/7 customer support.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We are here to assist you with any questions or concerns.</p>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> +1 800 123 4567</p>
+            <p><strong>Email:</strong> support@driveeasy.com</p>
+            <p><strong>Address:</strong> 1234 Easy Street, Car City, CA 90001</p>
+        </div>
+
+        <form id="contactForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="contactResult"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DriveEasy Car Rental | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Personalization functionality
+        const textSizeSelect = document.getElementById('textSize');
+        const themeColorSelect = document.getElementById('themeColor');
+        
+        textSizeSelect.addEventListener('change', function() {
+            document.body.style.fontSize = this.value + 'px';
+        });
+
+        themeColorSelect.addEventListener('change', function() {
+            document.body.style.backgroundColor = this.value === 'default' ? '' : this.value;
+        });
+    </script>
+</body>
+</html>
